@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crédito Hipotecario | BCP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <div class="header-top">
+        <a class="logo" href="index.html"><img src="img/logo.svg" alt="BCP" /></a>
+        <nav class="seg-nav"><a href="index.html">Personas</a><a href="pymes.html">Pymes</a><a href="empresas.html">Empresas</a></nav>
+        <div class="header-actions">
+          <button class="btn-search" type="button" data-open-search>Buscar</button>
+          <a class="btn-banca" href="banca.html">Banca por Internet</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Simular Crédito Hipotecario</h1>
+      <p>Haz realidad tus sueños de vivir en tu propio hogar con tasas referenciales.</p>
+    </div>
+  </section>
+  <div class="panel">
+    <form id="sim-form">
+      <div class="field"><label>Valor del inmueble (S/)</label><input id="monto" type="number" value="350000" required /></div>
+      <div class="field">
+        <label>Plazo (años)</label>
+        <select id="plazo">
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20" selected>20</option>
+          <option value="25">25</option>
+        </select>
+      </div>
+      <div class="field"><label>Cuota inicial (S/)</label><input type="number" value="70000" /></div>
+      <button class="btn-primary" type="submit">Simular Credito</button>
+      <div id="sim-result" class="result"></div>
+    </form>
+  </div>
+  <div class="overlay" id="search-modal"><div class="modal"><button class="close-x" data-close="search-modal">×</button><h3>Buscar</h3><input class="search-input" /></div></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

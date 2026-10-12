@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluciones Digitales / Cobros | BCP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <div class="header-top">
+        <a class="logo" href="index.html"><img src="img/logo.svg" alt="BCP" /></a>
+        <nav class="seg-nav"><a href="index.html">Personas</a><a href="pymes.html">Pymes</a><a href="empresas.html">Empresas</a></nav>
+        <div class="header-actions">
+          <button class="btn-search" type="button" data-open-search>Buscar</button>
+          <a class="btn-banca" href="banca.html">Banca por Internet</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Soluciones Digitales / Cobros</h1>
+      <p>Cobra con link de pago y código QR. Fácil, rápido y seguro.</p>
+    </div>
+  </section>
+  <div class="panel">
+    <p style="margin-bottom:16px;color:#4a5160;line-height:1.5">Activa cobranzas, pagos de empresa, factoring electrónico, descuento de facturas, financiamiento electrónico y carta fianza desde un solo lugar.</p>
+    <form onsubmit="event.preventDefault(); document.getElementById('cobro-ok').classList.add('show');">
+      <div class="field"><label>RUC</label><input required maxlength="11" /></div>
+      <div class="field"><label>Razón social</label><input required /></div>
+      <div class="field">
+        <label>Solución</label>
+        <select>
+          <option>Link de pago y QR</option>
+          <option>Cobranzas de mi empresa</option>
+          <option>Pagos de mi empresa</option>
+          <option>Factoring electrónico</option>
+          <option>Descuento de facturas</option>
+          <option>Carta fianza</option>
+        </select>
+      </div>
+      <button class="btn-primary" type="submit">Quiero más información</button>
+      <div id="cobro-ok" class="result">Un ejecutivo comercial te contactará.</div>
+    </form>
+  </div>
+  <div class="overlay" id="search-modal"><div class="modal"><button class="close-x" data-close="search-modal">×</button><h3>Buscar</h3><input class="search-input" /></div></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjetas de crédito | BCP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <div class="header-top">
+        <a class="logo" href="index.html"><img src="img/logo.svg" alt="BCP" /></a>
+        <nav class="seg-nav"><a href="index.html">Personas</a><a href="pymes.html">Pymes</a><a href="empresas.html">Empresas</a></nav>
+        <div class="header-actions">
+          <button class="btn-search" type="button" data-open-search>Buscar</button>
+          <a class="btn-banca" href="banca.html">Banca por Internet</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Tarjetas de crédito</h1>
+      <p>Elige la tarjeta que va contigo y disfruta beneficios todos los días.</p>
+    </div>
+  </section>
+  <div class="panel">
+    <form id="tarjeta-form">
+      <div class="field">
+        <label>Tipo de tarjeta</label>
+        <select>
+          <option>Visa Clásica</option>
+          <option>Visa Oro</option>
+          <option>Visa Signature</option>
+          <option>LATAM Pass</option>
+        </select>
+      </div>
+      <div class="field"><label>DNI</label><input required maxlength="8" /></div>
+      <div class="field"><label>Ingresos mensuales (S/)</label><input type="number" required /></div>
+      <div class="field"><label>Celular</label><input required /></div>
+      <button class="btn-primary" type="submit">Pedir Tarjeta</button>
+      <div id="tarjeta-result" class="result"></div>
+    </form>
+  </div>
+  <div class="overlay" id="search-modal"><div class="modal"><button class="close-x" data-close="search-modal">×</button><h3>Buscar</h3><input class="search-input" /></div></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

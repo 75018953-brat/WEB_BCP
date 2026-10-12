@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empresas | BCP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <div class="header-top">
+        <a class="logo" href="index.html"><img src="img/logo.svg" alt="BCP" /></a>
+        <nav class="seg-nav"><a href="index.html">Personas</a><a href="pymes.html">Pymes</a><a href="empresas.html" class="is-active">Empresas</a></nav>
+        <div class="header-actions">
+          <button class="btn-search" type="button" data-open-search>Buscar</button>
+          <a class="btn-banca" href="banca.html">Banca por Internet</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Banca Empresas</h1>
+      <p>Cash management, pagos masivos, cobranzas y financiamiento para tu compañía.</p>
+    </div>
+  </section>
+  <div class="panel">
+    <p style="margin-bottom:16px">Gestiona tesorería, cartas fianza y factoring electrónico con el respaldo BCP.</p>
+    <a class="btn-primary" href="cobros.html" style="display:flex;align-items:center;justify-content:center">Conocer productos</a>
+  </div>
+  <div class="overlay" id="search-modal"><div class="modal"><button class="close-x" data-close="search-modal">×</button><h3>Buscar</h3><input class="search-input" /></div></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

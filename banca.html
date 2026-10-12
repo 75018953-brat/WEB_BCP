@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banca por Internet | BCP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <div class="header-top">
+        <a class="logo" href="index.html"><img src="img/logo.svg" alt="BCP" /></a>
+        <nav class="seg-nav">
+          <a href="index.html">Personas</a>
+          <a href="pymes.html">Pymes</a>
+          <a href="empresas.html">Empresas</a>
+        </nav>
+        <div class="header-actions">
+          <button class="btn-search" type="button" data-open-search>Buscar</button>
+          <a class="btn-banca" href="banca.html">Banca por Internet</a>
+          <button class="menu-toggle" type="button">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Banca por Internet</h1>
+      <p>Ingresa a tu banca en línea. Esta pantalla es una demostración y no envía datos a ningún banco.</p>
+    </div>
+  </section>
+  <div class="panel login-box">
+    <div class="login-tabs">
+      <button type="button" class="active" data-tab="persona">Persona</button>
+      <button type="button" data-tab="empresa">Empresa</button>
+    </div>
+    <form id="login-form">
+      <div data-pane="persona">
+        <div class="field"><label>Tarjeta / Documento</label><input type="text" placeholder="Número de tarjeta o DNI" required /></div>
+        <div class="field"><label>Clave de internet de 6 dígitos</label><input type="password" maxlength="6" placeholder="••••••" required /></div>
+      </div>
+      <div data-pane="empresa" style="display:none">
+        <div class="field"><label>RUC</label><input type="text" maxlength="11" placeholder="RUC de la empresa" /></div>
+        <div class="field"><label>Usuario</label><input type="text" placeholder="Usuario" /></div>
+        <div class="field"><label>Clave</label><input type="password" placeholder="Clave" /></div>
+      </div>
+      <button class="btn-primary" type="submit">Ingresar</button>
+      <p class="note">Nunca te pediremos tu clave por correo, WhatsApp o redes.</p>
+      <div id="login-result" class="result"></div>
+    </form>
+  </div>
+  <div class="overlay" id="search-modal"><div class="modal"><button class="close-x" data-close="search-modal">×</button><h3>Buscar</h3><input class="search-input" id="search-q" /><div class="search-hits"><a href="index.html">Inicio</a><a href="cuenta.html">Cuenta digital</a></div></div></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
