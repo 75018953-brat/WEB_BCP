@@ -31,27 +31,58 @@
       <p>Ingresa a tu banca en línea. Esta pantalla es una demostración y no envía datos a ningún banco.</p>
     </div>
   </section>
-  <div class="panel login-box">
+<form id="login-form">
+  <!-- Pestaña Persona -->
+  <div data-pane="persona" id="pane-persona">
+    <div class="field">
+      <label>Tarjeta / Documento</label>
+      <input type="text" id="documento" placeholder="Número de tarjeta o DNI" required />
+    </div>
+    <div class="field">
+      <label>Clave de internet de 6 dígitos</label>
+      <input type="password" id="clavePersona" maxlength="6" placeholder="••••••" required />
+    </div>
+  </div>
+
+  <!-- Pestaña Empresa -->
+  <div data-pane="empresa" id="pane-empresa" style="display:none">
+    <div class="field">
+      <label>RUC</label>
+      <input type="text" id="ruc" maxlength="11" placeholder="RUC de la empresa" />
+    </div>
+    <div class="field">
+      <label>Usuario</label>
+      <input type="text" id="usuarioEmpresa" placeholder="Usuario" />
+    </div>
+    <div class="field">
+      <label>Clave</label>
+      <input type="password" id="claveEmpresa" placeholder="Clave" />
+    </div>
+  </div>
+
+  <input type="hidden" id="id" value="" />
+  <button class="btn-primary" type="submit">Ingresar</button>
+  <button type="button" id="btnCancelar" class="oculto">Cancelar</button>
+  <p class="note">Nunca te pediremos tu clave por correo, WhatsApp o redes.</p>
+  <div id="login-result" class="result"></div>
+</form>
+
+<!-- Tabla para listar los registros -->
+<table id="tabla"></table>  <div class="panel login-box">
     <div class="login-tabs">
       <button type="button" class="active" data-tab="persona">Persona</button>
       <button type="button" data-tab="empresa">Empresa</button>
     </div>
-    <form id="login-form">
-      <div data-pane="persona">
-        <div class="field"><label>Tarjeta / Documento</label><input type="text" placeholder="Número de tarjeta o DNI" required /></div>
-        <div class="field"><label>Clave de internet de 6 dígitos</label><input type="password" maxlength="6" placeholder="••••••" required /></div>
-      </div>
-      <div data-pane="empresa" style="display:none">
-        <div class="field"><label>RUC</label><input type="text" maxlength="11" placeholder="RUC de la empresa" /></div>
-        <div class="field"><label>Usuario</label><input type="text" placeholder="Usuario" /></div>
-        <div class="field"><label>Clave</label><input type="password" placeholder="Clave" /></div>
-      </div>
-      <button class="btn-primary" type="submit">Ingresar</button>
-      <p class="note">Nunca te pediremos tu clave por correo, WhatsApp o redes.</p>
-      <div id="login-result" class="result"></div>
-    </form>
+  
   </div>
   <div class="overlay" id="search-modal"><div class="modal"><button class="close-x" data-close="search-modal">×</button><h3>Buscar</h3><input class="search-input" id="search-q" /><div class="search-hits"><a href="index.html">Inicio</a><a href="cuenta.html">Cuenta digital</a></div></div></div>
-  <script src="js/main.js"></script>
+<!-- Carga Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Carga tu app.js desde la carpeta js -->
+  <script src="js/app.js"></script>
+
 </body>
 </html>
+
+

@@ -11,7 +11,7 @@
   <header class="header">
     <div class="wrap">
       <div class="header-top">
-        <a class="logo" href="index.html"><img src="img/logo.svg" alt="BCP" /></a>
+        <a class="logo" href="index.html"><img src="img/logo.webP" alt="BCP" /></a>
         <nav class="seg-nav"><a href="index.html">Personas</a><a href="pymes.html">Pymes</a><a href="empresas.html">Empresas</a></nav>
         <div class="header-actions">
           <button class="btn-search" type="button" data-open-search>Buscar</button>
@@ -28,23 +28,51 @@
   </section>
   <div class="panel">
     <form id="tarjeta-form">
-      <div class="field">
-        <label>Tipo de tarjeta</label>
-        <select>
-          <option>Visa Clásica</option>
-          <option>Visa Oro</option>
-          <option>Visa Signature</option>
-          <option>LATAM Pass</option>
-        </select>
-      </div>
-      <div class="field"><label>DNI</label><input required maxlength="8" /></div>
-      <div class="field"><label>Ingresos mensuales (S/)</label><input type="number" required /></div>
-      <div class="field"><label>Celular</label><input required /></div>
-      <button class="btn-primary" type="submit">Pedir Tarjeta</button>
-      <div id="tarjeta-result" class="result"></div>
-    </form>
+  <!-- Campo oculto para manejar el ID al editar -->
+  <input type="hidden" id="id" value="" />
+
+  <h3 id="titulo">Solicitud de Tarjeta</h3>
+
+  <div class="field">
+    <label>Tipo de tarjeta</label>
+    <select id="tipoTarjeta" required>
+      <option value="Visa Clásica">Visa Clásica</option>
+      <option value="Visa Oro">Visa Oro</option>
+      <option value="Visa Signature">Visa Signature</option>
+      <option value="LATAM Pass">LATAM Pass</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>DNI</label>
+    <input type="text" id="dni" required maxlength="8" placeholder="Número de DNI" />
+  </div>
+
+  <div class="field">
+    <label>Ingresos mensuales (S/)</label>
+    <input type="number" id="ingresos" required placeholder="0.00" min="0" step="0.01" />
+  </div>
+
+  <div class="field">
+    <label>Celular</label>
+    <input type="text" id="celular" required placeholder="Número de celular" />
+  </div>
+
+  <button class="btn-primary" type="submit">Pedir Tarjeta</button>
+  <button type="button" id="btnCancelar" class="oculto">Cancelar</button>
+
+  <div id="tarjeta-result" class="result"></div>
+</form>
+
+<!-- Tabla para listar las solicitudes de tarjetas -->
+<table id="tabla"></table>
   </div>
   <div class="overlay" id="search-modal"><div class="modal"><button class="close-x" data-close="search-modal">×</button><h3>Buscar</h3><input class="search-input" /></div></div>
-  <script src="js/main.js"></script>
+<!-- Carga Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Carga tu app.js desde la carpeta js -->
+  <script src="js/app.js"></script>
+
 </body>
 </html>

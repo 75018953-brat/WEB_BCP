@@ -632,3 +632,54 @@ footer a:hover { color: var(--orange); opacity: 1; }
   .hero-copy h1 { font-size: 22px; }
   .hero-copy p { font-size: 16px; }
 }
+
+/* ================= TEMA OSCURO (#121212) ================= */
+body.theme-dark {
+  background-color: #071226 !important;
+  color: #ffffff !important;
+}
+
+/* Cambia tarjetas, contenedores e interior de bloques */
+body.theme-dark header,
+body.theme-dark nav,
+body.theme-dark .card,
+body.theme-dark div[class*="container"],
+body.theme-dark div[class*="box"],
+body.theme-dark div[class*="wrap"] {
+  background-color: #071226 !important;
+  color: #ffffff !important;
+}
+
+body.theme-dark h1, 
+body.theme-dark h2, 
+body.theme-dark h3, 
+body.theme-dark p, 
+body.theme-dark span, 
+body.theme-dark a {
+  color: #e0e0e0 !important;
+}
+
+/* ================= TEMA AZUL (#1e293b) ================= */
+body.theme-blue {
+  background-color: #e75d00 !important;
+  color: #e2e8f0 !important;
+}
+
+body.theme-blue header,
+body.theme-blue nav,
+body.theme-blue .card,
+body.theme-blue div[class*="container"],
+body.theme-blue div[class*="box"],
+body.theme-blue div[class*="wrap"] {
+  background-color: #e75d00 !important;
+  color: #e2e8f0 !important;
+}
+
+body.theme-blue h1, 
+body.theme-blue h2, 
+body.theme-blue h3, 
+body.theme-blue p, 
+body.theme-blue span, 
+body.theme-blue a {
+  color: #cbd5e1 !important;
+}

@@ -27,24 +27,56 @@
     </div>
   </section>
   <div class="panel">
-    <form id="cuenta-form">
-      <div class="field"><label>Nombres y apellidos</label><input required /></div>
-      <div class="field"><label>DNI</label><input required maxlength="8" /></div>
-      <div class="field"><label>Celular</label><input required /></div>
-      <div class="field"><label>Correo</label><input type="email" required /></div>
-      <div class="field">
-        <label>Tipo de cuenta</label>
-        <select>
-          <option>Cuenta de ahorros soles</option>
-          <option>Cuenta de ahorros dólares</option>
-          <option>Cuenta corriente</option>
-        </select>
-      </div>
-      <button class="btn-primary" type="submit">Continuar</button>
-      <div id="cuenta-result" class="result"></div>
-    </form>
+   <form id="cuenta-form">
+  <!-- Campo oculto para almacenar el ID cuando se edita -->
+  <input type="hidden" id="id" value="" />
+
+  <h3 id="titulo">Apertura de Cuenta</h3>
+
+  <div class="field">
+    <label>Nombres y apellidos</label>
+    <input type="text" id="nombreCompleto" required placeholder="Nombres y Apellidos" />
+  </div>
+
+  <div class="field">
+    <label>DNI</label>
+    <input type="text" id="dni" required maxlength="8" placeholder="Número de DNI" />
+  </div>
+
+  <div class="field">
+    <label>Celular</label>
+    <input type="text" id="celular" required placeholder="Número de celular" />
+  </div>
+
+  <div class="field">
+    <label>Correo</label>
+    <input type="email" id="correo" required placeholder="ejemplo@correo.com" />
+  </div>
+
+  <div class="field">
+    <label>Tipo de cuenta</label>
+    <select id="tipoCuenta" required>
+      <option value="Cuenta de ahorros soles">Cuenta de ahorros soles</option>
+      <option value="Cuenta de ahorros dólares">Cuenta de ahorros dólares</option>
+      <option value="Cuenta corriente">Cuenta corriente</option>
+    </select>
+  </div>
+
+  <button class="btn-primary" type="submit">Continuar</button>
+  <button type="button" id="btnCancelar" class="oculto">Cancelar</button>
+
+  <div id="cuenta-result" class="result"></div>
+</form>
+
+<!-- Tabla para mostrar las cuentas registradas -->
+<table id="tabla"></table>
   </div>
   <div class="overlay" id="search-modal"><div class="modal"><button class="close-x" data-close="search-modal">×</button><h3>Buscar</h3><input class="search-input" /></div></div>
-  <script src="js/main.js"></script>
+<!-- Carga Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Carga tu app.js desde la carpeta js -->
+  <script src="js/app.js"></script>
+
 </body>
 </html>

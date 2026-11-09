@@ -28,25 +28,49 @@
   </section>
   <div class="panel">
     <p style="margin-bottom:16px;color:#4a5160;line-height:1.5">Activa cobranzas, pagos de empresa, factoring electrónico, descuento de facturas, financiamiento electrónico y carta fianza desde un solo lugar.</p>
-    <form onsubmit="event.preventDefault(); document.getElementById('cobro-ok').classList.add('show');">
-      <div class="field"><label>RUC</label><input required maxlength="11" /></div>
-      <div class="field"><label>Razón social</label><input required /></div>
-      <div class="field">
-        <label>Solución</label>
-        <select>
-          <option>Link de pago y QR</option>
-          <option>Cobranzas de mi empresa</option>
-          <option>Pagos de mi empresa</option>
-          <option>Factoring electrónico</option>
-          <option>Descuento de facturas</option>
-          <option>Carta fianza</option>
-        </select>
-      </div>
-      <button class="btn-primary" type="submit">Quiero más información</button>
-      <div id="cobro-ok" class="result">Un ejecutivo comercial te contactará.</div>
-    </form>
+   <form id="formulario">
+  <!-- Campo oculto para manejar el ID en las ediciones -->
+  <input type="hidden" id="id" value="" />
+
+  <h3 id="titulo">Quiero más información</h3>
+
+  <div class="field">
+    <label>RUC</label>
+    <input type="text" id="ruc" required maxlength="11" placeholder="Ingrese RUC" />
+  </div>
+
+  <div class="field">
+    <label>Razón social</label>
+    <input type="text" id="razonSocial" required placeholder="Nombre de la empresa" />
+  </div>
+
+  <div class="field">
+    <label>Solución</label>
+    <select id="solucion" required>
+      <option value="Link de pago y QR">Link de pago y QR</option>
+      <option value="Cobranzas de mi empresa">Cobranzas de mi empresa</option>
+      <option value="Pagos de mi empresa">Pagos de mi empresa</option>
+      <option value="Factoring electrónico">Factoring electrónico</option>
+      <option value="Descuento de facturas">Descuento de facturas</option>
+      <option value="Carta fianza">Carta fianza</option>
+    </select>
+  </div>
+
+  <button class="btn-primary" type="submit">Quiero más información</button>
+  <button type="button" id="btnCancelar" class="oculto">Cancelar</button>
+
+  <div id="cobro-ok" class="result">Un ejecutivo comercial te contactará.</div>
+</form>
+
+<!-- Tabla para mostrar las solicitudes -->
+<table id="tabla"></table>
   </div>
   <div class="overlay" id="search-modal"><div class="modal"><button class="close-x" data-close="search-modal">×</button><h3>Buscar</h3><input class="search-input" /></div></div>
-  <script src="js/main.js"></script>
+<!-- Carga Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Carga tu app.js desde la carpeta js -->
+  <script src="js/app.js"></script>
+
 </body>
 </html>

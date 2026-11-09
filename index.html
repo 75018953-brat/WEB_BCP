@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  
+    <button id="myButton" class="btn-Tema">Aclarar</button>
+  <script src="js/app.js"></script>
   <header class="header">
     <div class="wrap">
       <div class="header-top">
@@ -88,7 +91,7 @@
         </div>
       </div>
       <div class="hero-art">
-        <img src="img/hero-asesora.png" alt="Asesora BCP" />
+        <img src="img/hero-asesora.webP" alt="Asesora BCP" />
       </div>
     </div>
   </section>
@@ -156,24 +159,34 @@
             <li><span class="dot"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span> Solo con tu numero de Documento</li>
             <li><span class="dot"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span> Para clientes y no  clientes BCP</li>
           </ul>
-          <form id="preapp-form">
-            <div class="form-row">
-              <div class="doc-combo">
-                <select id="doc-type" aria-label="Tipo de documento">
-                  <option>RUC</option>
-                  <option>DNI</option>
-                  <option>CE</option>
-                </select>
-                <input id="doc-num" type="text" placeholder="RUC" maxlength="11" />
-              </div>
-              <button class="btn-conocer" type="submit">Conocer</button>
-            </div>
-            <p class="legal">
-              Declaro conocer que esta información será utilizada únicamente para los fines de este proceso, y será tratada según lo indicado en la
-              <a href="ayuda.html">Política de Privacidad (Protección de Datos Personales, sección 1)</a>.
-            </p>
-            <div id="preapp-result" class="result"></div>
-          </form>
+        <form id="preapp-form">
+  <input type="hidden" id="id" value="" />
+
+  <div class="form-row">
+    <div class="doc-combo">
+      <select id="doc-type" aria-label="Tipo de documento">
+        <option value="RUC">RUC</option>
+        <option value="DNI">DNI</option>
+        <option value="CE">CE</option>
+      </select>
+      <input id="doc-num" type="text" placeholder="Número de documento" maxlength="11" required />
+    </div>
+    <button class="btn-conocer" type="submit">Conocer</button>
+    <button type="button" id="btnCancelar" class="oculto">Cancelar</button>
+  </div>
+
+  <div id="preapp-result" class="result"></div>
+</form>
+
+<!-- Tabla opcional para listar los registros guardados abajo -->
+<table id="tabla"></table>
+
+<!-- SCRIPTS AL FINAL DE BODY -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/app.js"></script>
+
+<!-- Tabla para mostrar las preevaluaciones registradas -->
+<table id="tabla"></table>
         </div>
         <div class="shield" aria-hidden="true">
           <svg viewBox="0 0 160 180">
@@ -196,7 +209,7 @@
       <h2>Productos destacados</h2>
       <div class="cards">
         <article class="card">
-          <div class="card-photo"><img src="img/card-pos.jpg" alt="Pago con tarjeta" /></div>
+          <div class="card-photo"><img src="img/card-pos.webP" alt="Pago con tarjeta" /></div>
           <div class="card-body">
             <div class="card-title">
               <span class="mini-icon" style="background:#e8f3ff">
@@ -209,7 +222,7 @@
           </div>
         </article>
         <article class="card">
-          <div class="card-photo"><img src="img/card-casa.jpg" alt="Casa" /></div>
+          <div class="card-photo"><img src="img/card-casa.webP" alt="Casa" /></div>
           <div class="card-body">
             <div class="card-title">
               <span class="mini-icon" style="background:#eaf4ff">
@@ -222,7 +235,7 @@
           </div>
         </article>
         <article class="card">
-          <div class="card-photo"><img src="img/card-oficina.jpg" alt="Oficina" /></div>
+          <div class="card-photo"><img src="img/card-oficina.webP" alt="Oficina" /></div>
           <div class="card-body">
             <div class="card-title">
               <span class="mini-icon" style="background:#eaf2ff">
@@ -281,6 +294,11 @@
       </div>
     </div>
   </div>
-  <script src="js/main.js"></script>
+<!-- Carga Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Carga tu app.js desde la carpeta js -->
+  <script src="js/app.js"></script>
+
 </body>
 </html>
